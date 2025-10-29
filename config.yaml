@@ -5,7 +5,7 @@ system:
 
 provider:
   openai:
-    base_url: "https://854.zeabur.app"  # 你的 Gemini 中转站地址
+    base_url: "https://854.zeabur.app/v1"  # 你的 Gemini 中转站地址
     key: "854"  # 这里填写 Gemini 的 API Key
 
 model:
