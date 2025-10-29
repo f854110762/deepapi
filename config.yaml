@@ -1,42 +1,30 @@
-# config.yaml
-server:
+system:
+  key: "854"  # 你设置的 API 访问密钥
   host: "0.0.0.0"
   port: 8000
-  workers: 1
 
-log:
-  level: "INFO"
+provider:
+  google:
+    base_url: "https://854.zeabur.app"  # 你的 Gemini 中转站地址
+    key: "854"  # 这里填写 Gemini 的 API Key
 
-openai:
-  api_key: "${OPENAI_API_KEY}"
-  base_url: ""
-  models:
-    - "gpt-3.5-turbo"
-    - "gpt-4"
+model:
+  gemini-2.5-pro:
+    name: "Gemini 2.5 Pro Preview"
+    provider: google
+    model: "gemini-2.5-pro-preview-06-05"
+    rpm: 10
+    feature:
+      summary_think: true
+      
+  gemini-2.0-flash:
+    name: "Gemini 2.0 Flash"
+    provider: google
+    model: "gemini-2.0-flash"
+    rpm: 30
 
-anthropic:
-  api_key: "${ANTHROPIC_API_KEY}"
-  models:
-    - "claude-3-haiku-20240307"
-    - "claude-3-sonnet-20240229"
-
-google:
-  api_key: "${GOOGLE_API_KEY}"
-  models:
-    - "gemini-pro"
-
-zhipu:
-  api_key: "${ZHIPU_API_KEY}"
-  models:
-    - "glm-4"
-
-deepseek:
-  api_key: "${DEEPSEEK_API_KEY}"
-  models:
-    - "deepseek-chat"
-
-volcengine:
-  access_key: "${VOLC_ACCESS_KEY}"
-  secret_key: "${VOLC_SECRET_KEY}"
-  models:
-    - "doubao-pro-32k-240515"
+  gemini-1.5-pro:
+    name: "Gemini 1.5 Pro"
+    provider: google
+    model: "gemini-1.5-pro"
+    rpm: 15
